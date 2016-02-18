@@ -31,6 +31,5 @@ public class Solution
         for (int k = 0; k < list.size(); k++) {
             System.out.println(list.get(k));
         }
-
     }
 }
