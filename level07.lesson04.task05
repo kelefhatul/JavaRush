@@ -36,6 +36,5 @@ public class Solution
         for (int l = 0; l < listTwo10.length ; l++) {
             System.out.println(listTwo10[l]);
         }
-
     }
 }
