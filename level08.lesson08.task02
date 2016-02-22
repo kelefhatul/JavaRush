@@ -1,0 +1,58 @@
+package com.javarush.test.level08.lesson08.task02;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+/* Удалить все числа больше 10
+Создать множество чисел(Set<Integer>), занести туда 20 различных чисел.
+Удалить из множества все числа больше 10.
+*/
+
+public class Solution
+{
+    public static HashSet<Integer> createSet()
+    {
+        //напишите тут ваш код
+        HashSet<Integer> sList = new HashSet<Integer>();
+        sList.add(1);
+        sList.add(222);
+        sList.add(3);
+        sList.add(4324);
+        sList.add(5657);
+        sList.add(6324);
+        sList.add(7);
+        sList.add(834);
+        sList.add(9);
+        sList.add(10);
+        sList.add(11);
+        sList.add(12);
+        sList.add(13);
+        sList.add(14);
+        sList.add(15);
+        sList.add(16);
+        sList.add(17);
+        sList.add(18);
+        sList.add(19);
+        sList.add(20);
+        return sList;
+    }
+
+    public static HashSet<Integer> removeAllNumbersMoreThan10(HashSet<Integer> set)
+    {
+        //напишите тут ваш код
+       for (Iterator<Integer> i = set.iterator(); i.hasNext();){
+           Integer element = i.next();
+           if (element > 10){
+               i.remove();
+           }
+       }
+        return set;
+    }
+
+    public static void main(String[] args) throws  Exception{
+
+        removeAllNumbersMoreThan10(createSet());
+        for (Integer x : removeAllNumbersMoreThan10(createSet()))
+            System.out.println(x);
+    }
+}
