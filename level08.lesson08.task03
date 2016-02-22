@@ -1,0 +1,67 @@
+package com.javarush.test.level08.lesson08.task03;
+
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+/* Одинаковые имя и фамилия
+Создать словарь (Map<String, String>) занести в него десять записей по принципу «Фамилия» - «Имя».
+Проверить сколько людей имеют совпадающие с заданным имя или фамилию.
+*/
+
+public class Solution
+{
+    //public static int count =0;
+    public static HashMap<String, String> createMap()
+    {
+        //напишите тут ваш код
+        HashMap<String, String> mList = new HashMap<String, String>();
+        mList.put("Rak", "Tod");
+        mList.put("Ra", "Sven");
+        mList.put("ajf", "asd");
+        mList.put("slkfk", "Tod");
+        mList.put("as", "asdasd");
+        mList.put("hcmh", "sfjkl'kf");
+        mList.put("sdjsa'lj", "Tod");
+        mList.put("Rak2", "sakld");
+        mList.put("asdsfj", "akfjklsjf");
+        mList.put("sdfjs", "afljskjf");
+        return mList;
+    }
+
+    public static int getCountTheSameFirstName(HashMap<String, String> map, String name)
+    {
+        //напишите тут ваш код
+        int countName =0 ;
+        for (Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();iterator.hasNext();){
+            Map.Entry<String, String> pair = iterator.next();
+            String value = pair.getValue();
+            if (value.equals(name)){
+                countName++;
+            }
+        }
+        return countName;
+    }
+
+    public static int getCountTheSameLastName(HashMap<String, String> map, String lastName)
+    {
+        //напишите тут ваш код
+        int countLastName = 0;
+        for (Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator(); iterator.hasNext();){
+            Map.Entry<String, String> pair = iterator.next();
+            String key = pair.getKey();
+            if (key.equals(lastName)){
+                countLastName++;
+            }
+        }
+        return countLastName;
+    }
+
+    public static void main(String[] args) {
+        //createMap();
+        System.out.println(getCountTheSameFirstName(createMap(), "Tod"));;
+        System.out.println(getCountTheSameLastName(createMap(), "Rak"));
+    }
+}
