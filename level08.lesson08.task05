@@ -1,0 +1,54 @@
+package com.javarush.test.level08.lesson08.task05;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+/* Удалить людей, имеющих одинаковые имена
+Создать словарь (Map<String, String>) занести в него десять записей по принципу «фамилия» - «имя».
+Удалить людей, имеющих одинаковые имена.
+*/
+
+public class Solution
+{
+    public static HashMap<String, String> createMap()
+    {
+        //напишите тут ваш код
+        HashMap<String , String> map = new HashMap<String, String>();
+        map.put("Poz", "rak");
+        map.put("Edasd", "af");
+        map.put("asfsf", "dskl");
+        map.put("qwr", "rak");
+        map.put("lsdhf", "sdnsd");
+        map.put("sdkkfj", "rak");
+        map.put("dsfknln", "slakdf");
+        map.put("sdk", "asd");
+        map.put("sdnfksd", "sajdkf");
+        map.put("arwew", "aslkdf");
+        return map;
+    }
+
+    public static void removeTheFirstNameDuplicates(HashMap<String, String> map)
+    {
+        //напишите тут ваш код
+        HashMap<String, String> map1  = new HashMap<>(map);
+        HashMap<String, String> map2 = new HashMap<>(map);
+
+        for (Map.Entry<String, String> pair : map1.entrySet()){
+            map2.remove(pair.getKey());
+            if (map2.containsValue(pair.getValue())){
+                removeItemFromMapByValue(map, pair.getValue());
+            }
+        }
+    }
+
+    public static void removeItemFromMapByValue(HashMap<String, String> map, String value)
+    {
+        HashMap<String, String> copy = new HashMap<String, String>(map);
+        for (Map.Entry<String, String> pair: copy.entrySet())
+        {
+            if (pair.getValue().equals(value))
+                map.remove(pair.getKey());
+        }
+    }
+}
