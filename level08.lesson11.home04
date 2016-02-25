@@ -19,14 +19,7 @@ public class Solution
     }
 
     public static int getMinimum(List<Integer> array) {
-        // Найти минимум
-        int minimum = 0;
-        for (int i = 0; i < array.size(); i++) {
-            if (i==0 || minimum > array.get(i)){
-                minimum =array.get(i);
-            }
-        }
-        return minimum;
+        return Collections.min(array, null);
     }
 
     public static List<Integer> getIntegerList() throws IOException {
