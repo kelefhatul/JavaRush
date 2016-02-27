@@ -1,0 +1,84 @@
+package com.javarush.test.level08.lesson11.home06;
+
+/* Вся семья в сборе
+1. Создай класс Human с полями имя (String), пол (boolean), возраст (int), дети (ArrayList<Human>).
+2. Создай объекты и заполни их так, чтобы получилось: два дедушки, две бабушки, отец, мать, трое детей.
+3. Вывести все объекты Human на экран.
+*/
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+        //напишите тут ваш код
+        ArrayList<Human> family = new ArrayList<>();
+        Human GF1 = new Human("GF1", true, 54, new ArrayList<Human>());
+        Human GF2 = new Human("GF2", true, 55,new ArrayList<Human>() );
+        Human GM1 = new Human("GM1", false, 53,new ArrayList<Human>() );
+        Human GM2 = new Human("GM2", false, 52,new ArrayList<Human>() );
+
+        ArrayList<Human> child = new ArrayList<>();
+        Human ch1 = new Human("CH1", true, 4, new ArrayList<Human>());
+        Human ch2 = new Human("CH2", true, 3, new ArrayList<Human>());
+        Human ch3 = new Human("CH3", false, 6, new ArrayList<Human>());
+
+        child.add(ch1);
+        child.add(ch2);
+        child.add(ch3);
+
+        Human F = new Human("F", true, 32, child);
+        Human M = new Human("M", false, 31, child);
+
+
+
+        Collections.addAll(family,GF1, GF2, GM1,GM2,F,M,ch1,ch2,ch3 );
+        for (Human x : family){
+            System.out.println(x);
+        }
+
+
+    }
+
+    public static class Human
+    {
+        //напишите тут ваш код
+        private String name;
+        private Boolean sex;
+        private int age;
+        private ArrayList<Human> children = new ArrayList<Human>();
+
+        private Human(String name, Boolean sex, int age, ArrayList<Human> children){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.children = children;
+
+        }
+
+        public String toString()
+        {
+            String text = "";
+            text += "Имя: " + this.name;
+            text += ", пол: " + (this.sex ? "мужской" : "женский");
+            text += ", возраст: " + this.age;
+
+            int childCount = this.children.size();
+            if (childCount > 0)
+            {
+                text += ", дети: "+this.children.get(0).name;
+
+                for (int i = 1; i < childCount; i++)
+                {
+                    Human child = this.children.get(i);
+                    text += ", "+child.name;
+                }
+            }
+
+            return text;
+        }
+    }
+
+}
