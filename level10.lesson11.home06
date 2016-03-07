@@ -1,0 +1,84 @@
+package com.javarush.test.level10.lesson11.home06;
+
+/* Конструкторы класса Human
+Напиши класс Human с 6 полями. Придумай и реализуй 10 различных конструкторов для него. Каждый конструктор должен иметь смысл.
+*/
+
+public class Solution
+{
+    public static void main(String[] args)
+    {
+
+    }
+
+    public static class Human
+    {
+        //напишите тут ваши переменные и конструкторы
+        String name;
+        boolean sex;
+        int age;
+        String address;
+        String spouse;
+        int child;
+
+//        1
+        public Human(String name, boolean sex, int age, String address, String spouse, int child) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.address = address;
+            this.spouse = spouse;
+            this.child = child;
+        }
+//        2
+        public Human(String name, boolean sex, int age) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+        }
+//        3
+        public Human(String name, boolean sex) {
+            this.name = name;
+            this.sex = sex;
+        }
+//        4
+        public Human(int age, String spouse, int child) {
+            this.age = age;
+            this.spouse = spouse;
+            this.child = child;
+        }
+//        5
+        public Human(String name, String address) {
+            this.name = name;
+            this.address = address;
+        }
+//        6
+        public Human(int age, int child) {
+            this.age = age;
+            this.child = child;
+        }
+//        7
+        public Human(String name, String spouse, int age) {
+            this.name = name;
+            this.spouse = spouse;
+            this.age = age;
+        }
+//        8
+        public Human(String spouse, int age, boolean sex) {
+            this.spouse = spouse;
+            this.age = age;
+            this.sex = sex;
+        }
+//        9
+        public Human(String name) {
+            this.name = name;
+        }
+//        10
+
+        public Human(String name, int age, int child) {
+            this.name = name;
+            this.age = age;
+            this.child = child;
+        }
+    }
+}
