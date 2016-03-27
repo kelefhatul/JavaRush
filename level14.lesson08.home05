@@ -79,7 +79,7 @@ package com.javarush.test.level14.lesson08.home05;
 public class Monitor implements CompItem{
     @Override
     public String getName() {
-        return "Monitor";
+        return getClass().getSimpleName();
     }
 }
 package com.javarush.test.level14.lesson08.home05;
@@ -90,7 +90,7 @@ package com.javarush.test.level14.lesson08.home05;
 public class Mouse implements CompItem {
     @Override
     public String getName() {
-        return "Mouse";
+        return getClass().getSimpleName();
     }
 }
 package com.javarush.test.level14.lesson08.home05;
@@ -101,7 +101,7 @@ package com.javarush.test.level14.lesson08.home05;
 public class Keyboard implements CompItem {
     @Override
     public String getName() {
-        return "Keyboard";
+        return getClass().getSimpleName();
     }
 }
 package com.javarush.test.level14.lesson08.home05;
