@@ -1,0 +1,105 @@
+package com.javarush.test.level15.lesson04.task02;
+
+/* ООП - Перегрузка
+Перегрузите метод printMatrix 8 различными способами. В итоге должно получиться 10 различных методов printMatrix.
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        printMatrix(2, 3, "8");
+    }
+//1
+    public static void printMatrix(int m, int n, String value) {
+        System.out.println("Заполняем объектами String");
+        printMatrix(m, n, (Object) value);
+    }
+//2
+    public static void printMatrix(int m, int n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //3
+    //2
+    public static void printMatrix(int m, int n, int value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //4
+    //2
+    public static void printMatrix(double m, int n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //5
+    //2
+    public static void printMatrix(int m, double n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //6
+    //2
+    public static void printMatrix(int m, int n, double value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //7
+    //2
+    public static void printMatrix(float m, int n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //8
+    //2
+    public static void printMatrix(int m, float n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //9
+    //2
+    public static void printMatrix(int m, int n, float value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+    //10
+    //2
+    public static void printMatrix(long m, int n, Object value) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(value);
+            }
+            System.out.println();
+        }
+    }
+}
