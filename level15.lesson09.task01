@@ -1,0 +1,26 @@
+package com.javarush.test.level15.lesson09.task01;
+
+import java.util.HashMap;
+
+import java.util.Map;
+
+/* Статики 1
+В статическом блоке инициализировать labels 5 различными парами.
+*/
+
+public class Solution {
+    public static Map<Double, String> labels = new HashMap<Double, String>();
+    static {
+        labels.put(2.0, "t1");
+        labels.put((double) 3, "t2");
+        labels.put(4.1, "t3");
+        labels.put(5d, "t4");
+        labels.put(6.7, "t5");
+    }
+
+    public static void main(String[] args) {
+
+
+        System.out.println(labels);
+    }
+}
