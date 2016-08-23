@@ -1,0 +1,157 @@
+package com.javarush.test.level14.lesson08.bonus01;
+
+import java.io.CharConversionException;
+import java.io.FileReader;
+import java.net.URISyntaxException;
+import java.nio.file.FileSystemException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringTokenizer;
+
+/* Нашествие эксепшенов
+Заполни массив exceptions 10 различными эксепшенами.
+Первое исключение уже реализовано в методе initExceptions.
+*/
+
+public class Solution
+{
+    public static List<Exception> exceptions = new ArrayList<Exception>();
+
+    public static void main(String[] args)
+    {
+        initExceptions();
+
+        for (Exception exception : exceptions)
+        {
+            System.out.println(exception);
+        }
+    }
+
+    private static void initExceptions()
+    {   //it's first exception
+        //1
+        try
+        {
+
+            float i = 1 / 0;
+
+        } catch (Exception e)
+        {
+
+            exceptions.add(e);
+        }
+        //2
+        try
+        {
+            int [] a = new int[3];
+            a[5]= 1;
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //3
+        try
+        {
+            String s = null;
+            String m = s.toLowerCase();
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //4
+        try
+        {
+            ArrayList<String> list = new ArrayList<String>();
+            String s = list.get(18);
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //5
+        try
+        {
+            FileReader file = new FileReader("x:/");
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //6
+        Class c = null;
+        try
+        {
+            c = Class.forName("TEST");
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //7
+        try
+        {
+            Object o = 123;
+            String s123 = (String) o;}
+        catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //8
+        try
+        {
+            Collection<Integer> l = new ArrayList<Integer>();
+
+            for (int i=0; i < 10; ++i) {
+                l.add(new Integer(4));
+                l.add(new Integer(5));
+                l.add(new Integer(6));
+            }
+
+            for (Integer i : l) {
+                if (i.intValue() == 5) {
+                    l.remove(i);
+                }
+            }
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //9
+        try{
+            method1();
+            }
+
+        catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+        //10
+        try
+        {
+            method2();
+
+        } catch (Exception e)
+        {
+            exceptions.add(e);
+        }
+
+        //Add your code here
+
+    }
+    public static void method1() throws  URISyntaxException
+    {
+        int i = 3;
+         if (i == 3)
+            throw new URISyntaxException("", "");
+    }
+    public static void method2() throws FileSystemException
+    {
+        int j = 3;
+         if (j == 3)
+            throw new FileSystemException("e");
+    }
+  
+}
