@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
-
 /* Нашествие эксепшенов
 Заполни массив exceptions 10 различными эксепшенами.
 Первое исключение уже реализовано в методе initExceptions.
