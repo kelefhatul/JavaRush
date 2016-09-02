@@ -1,0 +1,86 @@
+package com.javarush.test.level15.lesson12.bonus02;
+
+/* Template pattern
+1. В отдельном файле создать класс DrinkMaker с тремя абстрактными методами:
+- void getRightCup() - выбрать подходящую чашку
+- void putIngredient() - положить ингредиенты
+- void pour() - залить жидкостью
+2. В классе DrinkMaker создать и реализовать метод void makeDrink(), который готовит напиток в такой последовательности: выбирает чашку, кладет ингредиенты, заливает жидкостью.
+3. В отдельных файлах создать классы LatteMaker и TeaMaker, которые наследуются от DrinkMaker.
+4. Распредели следующие фразы между всеми методами в классах LatteMaker и TeaMaker, различные фразы для различных методов.
+5. Каждый метод должен выводить в консоль свою фразу не пересекаясь с другими методами.
+6. Фразы:
+"Заливаем водой"
+"Берем чашку для латте"
+"Насыпаем чай"
+"Берем чашку для чая"
+"Заливаем молоком с пенкой"
+"Делаем кофе"
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        DrinkMaker tea = new TeaMaker();
+        tea.makeDrink();
+        DrinkMaker latte = new LatteMaker();
+        latte.makeDrink();
+    }
+}
+
+public class TeaMaker extends DrinkMaker {
+
+    @Override
+    public void getRightCup() {
+
+        System.out.println("Берем чашку для чая");
+    }
+
+    @Override
+    public void putIngredient() {
+
+        System.out.println("Насыпаем чай");
+    }
+
+    @Override
+    public void pour() {
+
+        System.out.println("Заливаем водой");
+    }
+
+}
+
+public class LatteMaker extends DrinkMaker {
+
+    @Override
+    public void getRightCup() {
+
+        System.out.println("Берем чашку для латте");
+    }
+
+    @Override
+    public void putIngredient() {
+
+        System.out.println("Делаем кофе");
+    }
+
+    @Override
+    public void pour() {
+
+        System.out.println("Заливаем молоком с пенкой");
+    }
+
+}
+
+public abstract class DrinkMaker {
+    protected abstract void getRightCup();
+
+    protected abstract void putIngredient();
+
+    protected abstract void pour();
+
+    protected void makeDrink(){
+        getRightCup();
+        putIngredient();
+        pour();
+    }
+}
